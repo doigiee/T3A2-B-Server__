@@ -1,9 +1,9 @@
 import express from 'express'
 import { UserModel, BookingModel } from './db.js'
-// import entryRoutes from './routes/entry_routes.js'
-// import Booking_routes from './routes/Booking_routes.js'
-import userRoutes from './routes/user_routes.js'
-import bookingRoutes from './routes/booking_routes.js'
+
+import userRoutes from './routes/User_routes.js'
+import bookingRoutes from './routes/Booking_routes.js'
+
 import cors from 'cors'
 
 const app = express();
@@ -13,13 +13,16 @@ app.use(cors())
 app.use(express.json())
 
 // Home page 
-app.get('/', (req, res) => res.send('Home Route'));
+
+app.get('/', (req, res) => {
+  res.send('Home Route');
+});
 
 // Get all users
-// app.get('/users', async (req, res) => res.send(await UserModel.find()));
-app.use('/users', userRoutes);
-// app.get('/categories', async (req, res) => res.send(await CategoryModel.find()))
-app.use('/bookings', bookingRoutes);
+app.get('/users', async (req, res) => res.send(await UserModel.find()));
+
+app.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
+
 // // Get a single user by id
 // app.get('/users/:id', async (req, res) => {
 //     try {
@@ -82,7 +85,9 @@ app.use('/bookings', bookingRoutes);
 //     }
 // })
 
+
 // app.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
+
 
 // app.get("/:id", async (req, res) => {
 //   try {

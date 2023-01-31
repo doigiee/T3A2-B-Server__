@@ -1,5 +1,7 @@
 import express from 'express';
-import { UserModel, BookingModel } from '../db.js';
+
+import { UserModel } from '..db.js';
+
 
 const router = express.Router();
 
