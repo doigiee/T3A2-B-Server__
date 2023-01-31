@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 dotenv.config()
 
-mongoose.set('strictQuery', true)
+// mongoose.set('strictQuery', true)
 
 //Closes it each time.
 async function dbClose() {
@@ -12,11 +12,10 @@ async function dbClose() {
 
 // Connect to MongoDB through Mongoose, replies with either true or false/ connected or error
 try {
-  console.log(process.env)
-  const m = await mongoose.connect(process.env.ATLAS_DB_URL)
-  console.log(m.connection.readyState === 1 ? 'Mongoose is connected!' : 'Mongoose failed to connect')
-}
-catch (err) {
+//   console.log(process.env)
+  const server = mongoose.connect(process.env.ATLAS_DB_URL)
+  .then((m) => console.log(m.connection.readyState === 1 ? 'Mongoose connected' : 'Mongoose failed to connect'))
+} catch (err) {
   console.log(err)
 }
 
@@ -54,7 +53,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Create a Mongoose model based on the userSchema
-const UserModel = mongoose.model('user', userSchema)
+const UserModel = mongoose.model('User', userSchema)
 
 // ... and one for booking ...
 const bookingSchema = new mongoose.Schema({
@@ -103,7 +102,7 @@ const bookingSchema = new mongoose.Schema({
 });
 
 // Create a Mongoose model based on the bookingSchema
-const BookingModel = mongoose.model('booking', bookingSchema)
+const BookingModel = mongoose.model('Booking', bookingSchema)
 
 
 export { UserModel, BookingModel, dbClose }

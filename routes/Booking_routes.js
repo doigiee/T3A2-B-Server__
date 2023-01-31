@@ -1,5 +1,5 @@
 import express from "express"
-import { BookingModel } from "./db.js"
+import { BookingModel } from "../db.js"
 
 const router = express.Router()
 
@@ -59,9 +59,11 @@ router.delete("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const { email, pkg, date, dog } = req.body
-    const newBooking = { email, pkg, date, dog }
+    // const categoryObject = await CategoryModel.findOne({ name: category })
+    const bookingObject = await BookingModel.findOne({ email: email, date: date })
+    const newBooking = { email: email, pkg: pkg, date: date, dog: dog }
     const savedBooking = await BookingModel.create(newBooking)
-    res.send(savedBooking)
+    res.status(201).send(await savedBooking)
   } catch (err) {
     res.status(500).send({ error: err.message })
   }
