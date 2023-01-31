@@ -1,8 +1,9 @@
 import express from 'express'
 import { UserModel, BookingModel } from './db.js'
+
 import userRoutes from './routes/User_routes.js'
 import bookingRoutes from './routes/Booking_routes.js'
-// import User_routes from './routes/User_routes.js'
+
 import cors from 'cors'
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.json())
 
 // Home page 
+
 app.get('/', (req, res) => {
   res.send('Home Route');
 });
@@ -82,6 +84,9 @@ app.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
 //       res.status(500).send({ error: err.message })
 //     }
 // })
+
+
+// app.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
 
 
 // app.get("/:id", async (req, res) => {
