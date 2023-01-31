@@ -7,7 +7,7 @@ router.get("/", async (req, res) => res.send(await BookingModel.find()))
 
 router.get("/:id", async (req, res) => {
   try {
-    const booking = await BookingModel.findById(req.params.id)
+    const booking = await BookingModel.find({ user: req.params.id})
     if (booking) {
       res.send(booking)
     } else {
@@ -17,6 +17,19 @@ router.get("/:id", async (req, res) => {
     res.status(500).send({ error: err.message })
   }
 })
+
+// router.get("/:id", async (req, res) => {
+//   try {
+//     const booking = await BookingModel.findById(req.params.id)
+//     if (booking) {
+//       res.send(booking)
+//     } else {
+//       res.status(404).send({ error: "Booking not found" })
+//     }
+//   } catch (err) {
+//     res.status(500).send({ error: err.message })
+//   }
+// })
 
 //Upadate
 router.put("/:id", async (req, res) => {
@@ -58,10 +71,10 @@ router.delete("/:id", async (req, res) => {
 //post
 router.post("/", async (req, res) => {
   try {
-    const { email, pkg, date, dog } = req.body
+    const { user, email, pkg, date, dog } = req.body
     // const categoryObject = await CategoryModel.findOne({ name: category })
     const bookingObject = await BookingModel.findOne({ email: email, date: date })
-    const newBooking = { email: email, pkg: pkg, date: date, dog: dog }
+    const newBooking = { user_id: user, email: email, pkg: pkg, date: date, dog: dog }
     const savedBooking = await BookingModel.create(newBooking)
     res.status(201).send(await savedBooking)
   } catch (err) {

@@ -57,9 +57,9 @@ const UserModel = mongoose.model('User', userSchema)
 
 // ... and one for booking ...
 const bookingSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true,
+    user: {
+        type: mongoose.ObjectId,
+        ref: 'User'
     },
     pkg: {
         type: String,
@@ -74,7 +74,7 @@ const bookingSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        day: {
+        date: {
             type: String,
             required: true
         },

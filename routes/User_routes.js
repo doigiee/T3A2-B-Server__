@@ -4,13 +4,13 @@ import { UserModel, BookingModel } from '../db.js';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  console.log("trying to find all users");
+  console.log("Access to find all users");
   // res.send(await UserModel.find().populate({ path: 'users', select: 'name' }))});
   res.send(await UserModel.find())});
 
 
 router.get('/:id', async (req, res) => {
-  console.log("trying to find a user")
+  console.log("Access to find a user")
     try {
       const user = await UserModel.findById(req.params.id)
       if (user) {
@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  console.log("New user creating process...")
+  console.log("Access for creating a user")
   try {
     // 1. Create a new user object with values passed in from the request
     const { email, title, firstName, lastName, phoneNumber, password } = req.body
