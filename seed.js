@@ -66,6 +66,7 @@ const users = [
 }
 ];
 
+// example bookings
 // const bookings = [
 //   {
 //     email: 'smithyjohn@gmail.com',
