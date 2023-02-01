@@ -18,7 +18,7 @@
 //             type: String,
 //             required: true
 //         },
-//         day: {
+//         date: {
 //             type: String,
 //             required: true
 //         },

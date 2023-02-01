@@ -5,13 +5,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 1',
-        price: '50'
+        price: '50',
     }],
     date: [{
         year: 2022,
         month: 'Jan',
         day: 25,
-        time: '09:00'
+        date: '09:00',
     }],
     dog: [{
         name: 'Henry',
@@ -24,13 +24,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 3',
-        price: '100'
+        price: '100',
     }],
     date: [{
         year: 2023,
         month: 'Feb',
         day: 25,
-        time: '09:00'
+        date: '09:00',
     }],
     dog: [{
         name: 'Alex',
@@ -43,13 +43,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 3',
-        price: '130'
+        price: '130',
     }],
     date: [{
         year: 2023,
         month: 'Aug',
         day: 15,
-        time: '10:00'
+        date: '10:00',
     }],
     dog: [{
         name: 'Rex',
@@ -62,13 +62,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 1',
-        price: '50'
+        price: '50',
     }],
     date: [{
         year: 2023,
         month: 'Mar',
         day: 1,
-        time: '09:30'
+        date: '09:30',
     }],
     dog: [{
         name: 'Walter',
@@ -81,13 +81,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 2',
-        price: '100'
+        price: '100',
     }],
     date: [{
         year: 2023,
         month: 'Apr',
         day: 10,
-        time: '10:00'
+        date: '10:00',
     }],
     dog: [{
         name: 'Henry',
@@ -100,13 +100,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 1',
-        price: '50'
+        price: '50',
     }],
     date: [{
         year: 2023,
         month: 'Dec',
         day: 5,
-        time: '08:00'
+        date: '08:00',
     }],
     dog: [{
         name: 'Samson',
@@ -119,13 +119,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 3',
-        price: '130'
+        price: '130',
     }],
     date: [{
         year: 2022,
         month: 'May',
         day: 25,
-        time: '07:00'
+        date: '07:00',
     }],
     dog: [{
         name: 'Baxter',
@@ -138,13 +138,13 @@ db.bookings.insertMany([
     // user: ''
     pkg: [{
         name: 'Package 4',
-        price: '150'
+        price: '150',
     }],
     date: [{
         year: 2022,
         month: 'Jan',
         day: 17,
-        time: '13:00'
+        time: '13:00',
     }],
     dog: [{
         name: 'Missy',
