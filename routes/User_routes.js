@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
   
   // Update
 router.put('/:id', async (req, res) => {
-    const { email, title, firstName, lastName, phoneNumber } = req.body
+    const { email, password, title, firstName, lastName, phoneNumber, isAdmin } = req.body
     const updatedUser = { email, password, title, firstName, lastName, phoneNumber, isAdmin}
     
     try {

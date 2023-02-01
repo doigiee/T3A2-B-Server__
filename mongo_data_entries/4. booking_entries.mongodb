@@ -2,13 +2,16 @@ use('PAWFUL')
 
 db.bookings.insertMany([
   {
-    email: 'smithyjohn@gmail.com',
-    pkg: 'Package 1',
+    // user: ''
+    pkg: [{
+        name: 'Package 1',
+        price: '50'
+    }],
     date: [{
-        year: '2022',
-        month: '12',
-        day: '25',
-        time: '0900'
+        year: 2022,
+        month: 'Jan',
+        day: 25,
+        time: '09:00'
     }],
     dog: [{
         name: 'Henry',
@@ -18,13 +21,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'zzz123zzz@outlook.com',
-    pkg: 'Package 3',
+    // user: ''
+    pkg: [{
+        name: 'Package 3',
+        price: '100'
+    }],
     date: [{
-        year: '2023',
-        month: '12',
-        day: '25',
-        time: '0900'
+        year: 2023,
+        month: 'Feb',
+        day: 25,
+        time: '09:00'
     }],
     dog: [{
         name: 'Alex',
@@ -34,13 +40,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'reddish@live.com',
-    pkg: 'Package 3',
+    // user: ''
+    pkg: [{
+        name: 'Package 3',
+        price: '130'
+    }],
     date: [{
-        year: '2023',
-        month: '11',
-        day: '15',
-        time: '1000'
+        year: 2023,
+        month: 'Aug',
+        day: 15,
+        time: '10:00'
     }],
     dog: [{
         name: 'Rex',
@@ -50,13 +59,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'watermelonsquash@live.com',
-    pkg: 'Package 1',
+    // user: ''
+    pkg: [{
+        name: 'Package 1',
+        price: '50'
+    }],
     date: [{
-        year: '2023',
-        month: '8',
-        day: '1',
-        time: '0930'
+        year: 2023,
+        month: 'Mar',
+        day: 1,
+        time: '09:30'
     }],
     dog: [{
         name: 'Walter',
@@ -66,13 +78,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'peanutsinfridge@live.com',
-    pkg: 'Package 2',
+    // user: ''
+    pkg: [{
+        name: 'Package 2',
+        price: '100'
+    }],
     date: [{
-        year: '2023',
-        month: '7',
-        day: '10',
-        time: '1000'
+        year: 2023,
+        month: 'Apr',
+        day: 10,
+        time: '10:00'
     }],
     dog: [{
         name: 'Henry',
@@ -82,13 +97,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'disneydreamscometrue@outlook.com',
-    pkg: 'Package 1',
+    // user: ''
+    pkg: [{
+        name: 'Package 1',
+        price: '50'
+    }],
     date: [{
-        year: '2023',
-        month: '5',
-        day: '5',
-        time: '0800'
+        year: 2023,
+        month: 'Dec',
+        day: 5,
+        time: '08:00'
     }],
     dog: [{
         name: 'Samson',
@@ -98,13 +116,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'colormeblue@live.com',
-    pkg: 'Package 3',
+    // user: ''
+    pkg: [{
+        name: 'Package 3',
+        price: '130'
+    }],
     date: [{
-        year: '2022',
-        month: '2',
-        day: '25',
-        time: '0700'
+        year: 2022,
+        month: 'May',
+        day: 25,
+        time: '07:00'
     }],
     dog: [{
         name: 'Baxter',
@@ -114,13 +135,16 @@ db.bookings.insertMany([
     }]
 },
 {
-    email: 'watermelonsquash@live.com',
-    pkg: 'Package 4',
+    // user: ''
+    pkg: [{
+        name: 'Package 4',
+        price: '150'
+    }],
     date: [{
-        year: '2022',
-        month: '2',
-        day: '17',
-        time: '1300'
+        year: 2022,
+        month: 'Jan',
+        day: 17,
+        time: '13:00'
     }],
     dog: [{
         name: 'Missy',

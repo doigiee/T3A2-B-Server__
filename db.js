@@ -61,13 +61,18 @@ const bookingSchema = new mongoose.Schema({
         type: mongoose.ObjectId,
         ref: 'User'
     },
-    pkg: {
-        type: String,
-        required: true,
-    },
+    pkg: [{
+        name: {type: String,
+            required: true
+        },
+        price: { 
+            type: String,
+            required: true
+        },
+    }],
     date: [{
         year: {
-            type: String,
+            type: Number,
             required: true
         },
         month: {
@@ -75,7 +80,7 @@ const bookingSchema = new mongoose.Schema({
             required: true
         },
         date: {
-            type: String,
+            type: Number,
             required: true
         },
         time: {

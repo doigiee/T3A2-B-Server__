@@ -66,10 +66,11 @@ const users = [
 }
 ];
 
-// example bookings
+// // example bookings
 // const bookings = [
 //   {
-//     email: 'smithyjohn@gmail.com',
+//     user:'empty',
+//     // email: 'smithyjohn@gmail.com',
 //     pkg: 'Package 1',
 //     date: [{
 //         year: '2022',
@@ -85,7 +86,8 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'zzz123zzz@outlook.com',
+//     user:'empty',
+//     // email: 'zzz123zzz@outlook.com',
 //     pkg: 'Package 3',
 //     date: [{
 //         year: '2023',
@@ -101,7 +103,8 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'reddish@live.com',
+//     user:'empty',
+//     // email: 'reddish@live.com',
 //     pkg: 'Package 3',
 //     date: [{
 //         year: '2023',
@@ -117,7 +120,7 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'watermelonsquash@live.com',
+//     // email: 'watermelonsquash@live.com',
 //     pkg: 'Package 1',
 //     date: [{
 //         year: '2023',
@@ -133,7 +136,8 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'peanutsinfridge@live.com',
+//     user:'empty',
+//     // email: 'peanutsinfridge@live.com',
 //     pkg: 'Package 2',
 //     date: [{
 //         year: '2023',
@@ -149,7 +153,8 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'disneydreamscometrue@outlook.com',
+//     user:'empty',
+//     // email: 'disneydreamscometrue@outlook.com',
 //     pkg: 'Package 1',
 //     date: [{
 //         year: '2023',
@@ -165,7 +170,8 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'colormeblue@live.com',
+//     user:'empty',
+//     // email: 'colormeblue@live.com',
 //     pkg: 'Package 3',
 //     date: [{
 //         year: '2022',
@@ -181,7 +187,8 @@ const users = [
 //     }]
 // },
 // {
-//     email: 'watermelonsquash@live.com',
+//     user:'empty',
+//     // email: 'watermelonsquash@live.com',
 //     pkg: 'Package 4',
 //     date: [{
 //         year: '2022',
@@ -200,7 +207,7 @@ const users = [
 
 await UserModel.insertMany(users);
 // await BookingModel.insertMany(bookings);
-console.log('Inserted users and bookings')
+console.log('Inserted users')
 
 
 dbClose()
