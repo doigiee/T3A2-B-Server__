@@ -1,13 +1,30 @@
 import express from "express"
-import { BookingModel } from "../db.js"
+import { BookingModel, UserModel } from "../db.js"
 
 const router = express.Router()
 
 router.get("/", async (req, res) => res.send(await BookingModel.find()))
 
+
+// Searching booking through User_id
 router.get("/:id", async (req, res) => {
+  console.log("Access to find bookings of user");
   try {
-    const booking = await BookingModel.find({ user: req.params.id})
+    const booking = await BookingModel.find({ user: req.params.id })
+    if (booking) {
+      res.send(booking)
+    } else {
+      res.status(404).send({ error: "Booking not found" })
+    }
+  } catch (err) {
+    res.status(500).send({ error: err.message })
+  }
+})
+// Searching booking through Booking_id
+router.get("/find/:id", async (req, res) => {
+  console.log("Access to find bookings of user");
+  try {
+    const booking = await BookingModel.findOne({ _id: req.params.id })
     if (booking) {
       res.send(booking)
     } else {
@@ -25,7 +42,7 @@ router.get("/:id", async (req, res) => {
 //       res.send(booking)
 //     } else {
 //       res.status(404).send({ error: "Booking not found" })
-//     }
+//     }  
 //   } catch (err) {
 //     res.status(500).send({ error: err.message })
 //   }
@@ -70,11 +87,29 @@ router.delete("/:id", async (req, res) => {
 
 //post
 router.post("/", async (req, res) => {
+  console.log("New booking coming in" , req.body)
   try {
-    const { user, email, pkg, date, dog } = req.body
     // const categoryObject = await CategoryModel.findOne({ name: category })
-    const bookingObject = await BookingModel.findOne({ email: email, date: date })
-    const newBooking = { user_id: user, email: email, pkg: pkg, date: date, dog: dog }
+    const { user, pkg, date, dog } = req.body
+    const userObject = await UserModel.findOne({ _id: user })
+    const newBooking = { 
+      user: userObject, 
+      pkg: {
+        name: pkg.name, 
+        price: pkg.price
+      }, 
+      date: {
+        year: date.year,
+        month: date.month,
+        date: date.date,
+        time: date.time
+      }, 
+      dog: {
+        name: dog.name,
+        gender: dog.gender,
+        age: dog.age,
+        breed: dog.breed
+      }}
     const savedBooking = await BookingModel.create(newBooking)
     res.status(201).send(await savedBooking)
   } catch (err) {
