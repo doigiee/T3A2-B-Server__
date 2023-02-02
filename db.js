@@ -73,19 +73,19 @@ const bookingSchema = new mongoose.Schema({
     date: [{
         year: {
             type: Number,
-            required: true
+            // required: true
         },
         month: {
             type: String,
-            required: true
+            // required: true
         },
         date: {
             type: Number,
-            required: true
+            // required: true
         },
         time: {
             type: String,
-            required: true
+            // required: true
         }
     }],
     dog: [{

@@ -11,7 +11,7 @@ db.bookings.insertMany([
         year: 2022,
         month: 'Jan',
         day: 25,
-        date: '09:00',
+        time: '09:00',
     }],
     dog: [{
         name: 'Henry',
@@ -30,7 +30,7 @@ db.bookings.insertMany([
         year: 2023,
         month: 'Feb',
         day: 25,
-        date: '09:00',
+        time: '09:00',
     }],
     dog: [{
         name: 'Alex',
@@ -49,7 +49,7 @@ db.bookings.insertMany([
         year: 2023,
         month: 'Aug',
         day: 15,
-        date: '10:00',
+        time: '10:00',
     }],
     dog: [{
         name: 'Rex',
@@ -68,7 +68,7 @@ db.bookings.insertMany([
         year: 2023,
         month: 'Mar',
         day: 1,
-        date: '09:30',
+        time: '09:30',
     }],
     dog: [{
         name: 'Walter',
@@ -87,7 +87,7 @@ db.bookings.insertMany([
         year: 2023,
         month: 'Apr',
         day: 10,
-        date: '10:00',
+        time: '10:00',
     }],
     dog: [{
         name: 'Henry',
@@ -106,7 +106,7 @@ db.bookings.insertMany([
         year: 2023,
         month: 'Dec',
         day: 5,
-        date: '08:00',
+        time: '08:00',
     }],
     dog: [{
         name: 'Samson',
@@ -125,7 +125,7 @@ db.bookings.insertMany([
         year: 2022,
         month: 'May',
         day: 25,
-        date: '07:00',
+        time: '07:00',
     }],
     dog: [{
         name: 'Baxter',

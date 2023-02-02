@@ -12,4 +12,4 @@ make a DB with Mongo DB.
         - 'src/mongoDB_data_entries/4. booking_entries.mongodb'
     4. then create a .env file in the root of the project and  fill in the ATLAS DB connection string in the .env file, a sample file has been provided.
 
-or alternatively run `node seed.js` once your database 'PAWFUL' is created and connected (can use `mongo_data_entries/1. create_users_database.mongodb`) to create database 'PAWFUL'.
+or alternatively run `node seed.js` once your database 'PAWFUL' is created and connected (can use `mongo_data_entries/1. create_users_database.mongodb`) to create database 'PAWFUL' Then manually insert the user_id from the ids created in users into `node seed2.js` to creating bookings which relate to your newly created users, as `users[2]._id` didn't work unforutunatly. once id's are inserted run `node seed2.js`.

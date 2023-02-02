@@ -2,7 +2,7 @@
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
 const database = 'PAWFUL';
-const collection = 'Bookings';
+const collection = 'bookings';
 
 // The current database to use.
 use(database);

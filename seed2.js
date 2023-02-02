@@ -5,7 +5,8 @@ console.log('All Bookings deleted')
 
 const bookings = [
     {
-      user: users[2]._id,
+      user: "63db0fae65e1e07d39f1adf3",
+    //   user: users[2]._id,
       pkg: [{
         name: 'Package 1',
         price: '50',
@@ -13,8 +14,8 @@ const bookings = [
       date: [{
           year: 2022,
           month: 'Jan',
-          day: 25,
-          date: '09:00'
+          date: 25,
+          time: '0900',
       }],
       dog: [{
           name: 'Henry',
@@ -24,7 +25,7 @@ const bookings = [
       }]
   },
   {
-      user: users[1]._id,
+      user: "63db0fae65e1e07d39f1adf4",
       pkg: [{
         name: 'Package 3',
         price: '100',
@@ -33,7 +34,7 @@ const bookings = [
             year: 2023,
             month: 'Feb',
             day: 25,
-            date: '09:00',
+            date: '0900',
         }],
       dog: [{
           name: 'Alex',
@@ -43,7 +44,7 @@ const bookings = [
       }]
   },
   {
-      user: users[2]._id,
+      user: "63db0fae65e1e07d39f1adf5",
       pkg: [{
         name: 'Package 3',
         price: '130',
@@ -52,7 +53,7 @@ const bookings = [
         year: 2023,
         month: 'Aug',
         day: 15,
-        date: '10:00',
+        date: '1000',
     }],
       dog: [{
           name: 'Rex',
@@ -62,7 +63,7 @@ const bookings = [
       }]
   },
   {
-      user: users[3]._id,
+      user: "63db0fae65e1e07d39f1adf6",
       pkg: [{
         name: 'Package 1',
         price: '50',
@@ -71,7 +72,7 @@ const bookings = [
         year: 2023,
         month: 'Mar',
         day: 1,
-        date: '09:30',
+        date: '0930',
     }],
       dog: [{
           name: 'Walter',
@@ -81,7 +82,7 @@ const bookings = [
       }]
   },
   {
-      user: users[1]._id,
+      user: "63db0fae65e1e07d39f1adf7",
       pkg: [{
         name: 'Package 2',
         price: '100',
@@ -90,7 +91,7 @@ const bookings = [
         year: 2023,
         month: 'Apr',
         day: 10,
-        date: '10:00',
+        date: '1000',
     }],
       dog: [{
           name: 'Henry',
@@ -100,7 +101,7 @@ const bookings = [
       }]
   },
   {
-      user: users[3]._id,
+      user: "63db0fae65e1e07d39f1adf5",
       pkg: [{
         name: 'Package 1',
         price: '50',
@@ -109,7 +110,7 @@ const bookings = [
         year: 2023,
         month: 'Dec',
         day: 5,
-        date: '08:00',
+        date: '0800',
     }],
       dog: [{
           name: 'Samson',
@@ -119,7 +120,7 @@ const bookings = [
       }]
   },
   {
-      user: users[2]._id,    
+      user: "63db0fae65e1e07d39f1adf5",    
       pkg: [{
         name: 'Package 3',
         price: '130',
@@ -128,7 +129,7 @@ const bookings = [
         year: 2022,
         month: 'May',
         day: 25,
-        date: '07:00',
+        date: '0700',
     }],
       dog: [{
           name: 'Baxter',
@@ -138,7 +139,7 @@ const bookings = [
       }]
   },
   {
-      user: users[1]._id,    
+      user: "63db0fae65e1e07d39f1adf4",    
       pkg: [{
         name: 'Package 4',
         price: '150',
@@ -147,7 +148,7 @@ const bookings = [
         year: 2022,
         month: 'Jan',
         day: 17,
-        time: '13:00',
+        time: '1300',
     }],
       dog: [{
           name: 'Missy',
