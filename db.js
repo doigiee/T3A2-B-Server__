@@ -61,7 +61,7 @@ const bookingSchema = new mongoose.Schema({
         type: mongoose.ObjectId,
         ref: 'User'
     },
-    pkg: [{
+    pkg: {
         name: {type: String,
             required: true
         },
@@ -69,8 +69,8 @@ const bookingSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-    }],
-    date: [{
+    },
+    date: {
         year: {
             type: Number,
             // required: true
@@ -87,8 +87,8 @@ const bookingSchema = new mongoose.Schema({
             type: String,
             // required: true
         }
-    }],
-    dog: [{
+    },
+    dog: {
         name: {
             type: String,
             required: true
@@ -103,7 +103,7 @@ const bookingSchema = new mongoose.Schema({
         age: {
             type: Number
         }
-    }],
+    },
 });
 
 // Create a Mongoose model based on the bookingSchema
