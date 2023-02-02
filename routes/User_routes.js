@@ -30,6 +30,7 @@ router.post('/register', async (req, res) => {
     }
     // 2. Insert the new user into the database
     const insertedUser = await UserModel.create(newUser)
+    console.log(insertedUser)
     // 3. Send the new user with 201 status
     const token = jwt.sign({
       type: 'JWT',
@@ -41,7 +42,7 @@ router.post('/register', async (req, res) => {
     })
     return res.status(201).json({
       code: 201,
-      message: 'Thanks for registering!',
+      message: `Thanks for registering! ${insertedUser.firstName}`,
       user_id: insertedUser._id,
       firstName: insertedUser.firstName,
       token: token
@@ -53,7 +54,7 @@ router.post('/register', async (req, res) => {
 
 // For login purposes
 router.post('/login', async (req, res) => {
-  console.log("Access to find all users");
+  console.log("Access to login");
   try {
     const user = await UserModel.findOne(req.body)
     if (user.password === req.body.password) {
@@ -73,7 +74,7 @@ router.post('/login', async (req, res) => {
         token: token
       })
     } else {
-      return res.status(404).send({ error: err.message })
+      return res.status(404).send({ error: "LogIn failed. Please try again" })
     }
   } catch (err) {
     res.status(500).send({ error: err.message })
