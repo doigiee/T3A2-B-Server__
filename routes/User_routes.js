@@ -52,10 +52,11 @@ router.post('/', async (req, res) => {
   
   // Update
 router.put('/:id', async (req, res) => {
-    const { email, title, firstName, lastName, phoneNumber } = req.body
-    const updatedUser = { email, password, title, firstName, lastName, phoneNumber, isAdmin}
+    const { email, password, title, firstName, lastName, phoneNumber, isAdmin } = req.body
+    const updatedUser = { $set:{email}, $set:{password}, title, firstName, lastName, phoneNumber, $set:{isAdmin} }
     
     try {
+      console.log("Updating user requested")
       const user = await UserModel.findByIdAndUpdate(req.params.id, updatedUser, { returnDocument: 'after'})
       if (user) {
         res.send(user)

@@ -50,22 +50,28 @@ router.get("/find/:id", async (req, res) => {
 
 //Upadate
 router.put("/:id", async (req, res) => {
-  const { email, pkg, date, dog } = req.body
-  const updatedBooking = { email, pkg, date, dog }
+  console.log('Booking update requested', req.params.id)
+  const { user, pkg, date, dog } = req.body
+  const updatedBooking = { user, pkg, date, dog }
+  console.log(req.body)
 
   try {
-    const booking = await BookingModel.findByIdAndUpdate(
-      req.params.id,
+    console.log({$set:updatedBooking.pkg})
+    const booking = await BookingModel.updateOne(
+      req.params,
+      // {$set:updatedBooking.date},
       updatedBooking,
-      { new: true }
+      { returnDocument: true }
     )
     if (booking) {
       res.send(booking)
+      console.log("Updated booking successfully", booking)
     } else {
       res.status(404).send({ error: "Booking not found" })
     }
   } catch (err) {
     res.status(500).send({ error: err.message })
+    console.log(err.message)
   }
 }
 )
