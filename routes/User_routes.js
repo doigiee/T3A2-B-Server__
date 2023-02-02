@@ -72,7 +72,7 @@ router.delete('/:id', async (req, res) => {
     try {
       const user = await UserModel.findByIdAndDelete(req.params.id)
       if (user) {
-        res.sendStatus(204).send({ msg: "User deleted successfully"}) //need message to be sent ex) successfully deleted
+        res.sendStatus(204)//.send({ msg: "User deleted successfully"})
       } else {
         res.status(404).send({ error: 'User not found' })
       }
