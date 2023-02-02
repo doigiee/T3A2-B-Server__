@@ -10,10 +10,6 @@ app.use(cors())
 
 app.use(express.json())
 
-
-app.use('/users', userRoutes)
-app.use('/bookings', bookingRoutes)
-
 // Home page 
 app.get('/', (req, res) => {
   res.send('Home Route');
