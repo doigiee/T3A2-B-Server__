@@ -1,17 +1,18 @@
 import express from "express"
 import { BookingModel, UserModel } from "../db.js"
-
+import { verifyToken } from '../middleware/auth.js';
 const router = express.Router()
 
-router.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
+// All bookings
+router.get("/", verifyToken, async (req, res) => res.send(await BookingModel.find()))
 
 // Searching booking through User_id
-router.get("/:id", async (req, res) => {
-  console.log("Access to find users bookings by user_id : ", req.params.id );
+router.get("/my_bookings", verifyToken, async (req, res) => {
+  console.log("Access to find users bookings by user_id : ", req.body._id );
   try {
-    const booking = await BookingModel.find({ user: req.params.id })
-    if (booking) {
-      res.send(booking)
+    const bookings = await BookingModel.find({ user: req.body._id })
+    if (bookings) {
+      res.send(bookings)
     } else {
       res.status(404).send({ error: "Booking not found" })
     }
@@ -21,14 +22,14 @@ router.get("/:id", async (req, res) => {
 })
 
 // Searching a booking through Booking_id
-router.get("/find/:id", async (req, res) => {
+router.get("/:id", verifyToken, async (req, res) => {
   console.log("Access to find the booking_id : " + req.params.id);
   try {
     const booking = await BookingModel.findOne({ _id: req.params.id })
     if (booking) {
       res.send(booking)
     } else {
-      res.status(404).send({ error: "Booking not found" })
+      res.status(404).send({ error: "We can't find the booking." })
     }
   } catch (err) {
     res.status(500).send({ error: err.message })
@@ -37,24 +38,22 @@ router.get("/find/:id", async (req, res) => {
 
 
 //Update
-router.put("/:id", async (req, res) => {
+router.put("/:id", verifyToken, async (req, res) => {
   console.log('Booking update requested, Booking_id : ', req.params.id)
   const { user, pkg, date, dog } = req.body
   const updatedBooking = { user, pkg, date, dog }
-
   try {
-    const booking = await BookingModel.updateOne(
-      req.params,
-      // {$set:updatedBooking.date},
+    const booking = await BookingModel.findByIdAndUpdate(
+      req.params.id,
       updatedBooking,
-      { returnDocument: true }
+      { returnDocument: 'after' }
       )
       if (booking) {
         res.send(booking)
         console.log("Updated booking successfully")
-        } else {
-          res.status(404).send({ error: "Booking not found" })
-        }
+      } else {
+        res.status(404).send({ error: "Booking not found" })
+      }
     } catch (err) {
       res.status(500).send({ error: err.message })
       console.log(err.message)
@@ -63,15 +62,12 @@ router.put("/:id", async (req, res) => {
 )
 
 //Delete
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", verifyToken, async (req, res) => {
   try {
     const booking = await BookingModel.findByIdAndDelete(req.params.id)
-    if (booking) {
-      console.log("Booking deleted", booking)
-      res.sendStatus(204)
-    } else {
-      res.status(404).send({ error: "Booking not found" })
-    }
+    console.log("Booking deleted")
+    res.status(200).send({ msg: "Booking is deleted successfully."})
+    return ;
   }
   catch (err) {
     res.status(500).send({ error: err.message })
@@ -79,9 +75,9 @@ router.delete("/:id", async (req, res) => {
 })
 
 //post
-router.post("/", async (req, res) => {
+router.post("/", verifyToken, async (req, res) => {
   try {
-    console.log("New booking coming in" , req.body)
+    console.log("New booking coming in")
     const { user, pkg, date, dog } = req.body
     const userObject = await UserModel.findOne({ _id: user })
     const newBooking = { 
@@ -104,8 +100,8 @@ router.post("/", async (req, res) => {
       }
     }
       const savedBooking = await BookingModel.create(newBooking)
-      console.log("New booking coming in : " + savedBooking)
-    res.status(201).send(await savedBooking)
+      console.log("New booking created : " + savedBooking)
+    res.status(201).send(savedBooking)
     } catch (err) {
       res.status(500).send({ error: err.message })
     }
