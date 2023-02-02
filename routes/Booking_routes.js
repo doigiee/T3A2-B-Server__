@@ -1,5 +1,5 @@
 import express from "express"
-import { BookingModel } from "../db.js"
+import { BookingModel, UserModel } from "../db.js"
 
 const router = express.Router()
 
@@ -81,6 +81,7 @@ router.delete("/:id", async (req, res) => {
 //post
 router.post("/", async (req, res) => {
   try {
+    console.log("New booking coming in" , req.body)
     const { user, pkg, date, dog } = req.body
     const userObject = await UserModel.findOne({ _id: user })
     const newBooking = { 
@@ -100,7 +101,8 @@ router.post("/", async (req, res) => {
         gender: dog.gender,
         age: dog.age,
         breed: dog.breed
-      }}
+      }
+    }
       const savedBooking = await BookingModel.create(newBooking)
       console.log("New booking coming in : " + savedBooking)
     res.status(201).send(await savedBooking)
