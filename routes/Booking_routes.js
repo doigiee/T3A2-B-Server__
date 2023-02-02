@@ -3,7 +3,7 @@ import { BookingModel } from "../db.js"
 
 const router = express.Router()
 
-router.get("/", async (req, res) => res.send(await BookingModel.find()))
+router.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
 
 router.get("/:id", async (req, res) => {
   try {

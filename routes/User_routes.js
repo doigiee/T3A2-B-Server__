@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
-  console.log("Access to find a user")
+  // console.log("Access to find a user")
     try {
       const user = await UserModel.findById(req.params.id)
       if (user) {

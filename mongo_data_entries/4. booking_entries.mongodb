@@ -2,7 +2,7 @@ use('PAWFUL')
 
 db.bookings.insertMany([
   {
-    user: '63db10631a15c243a6e09e6d',
+    user: '63db4575ff57af61244f67cb',
     pkg: [{
         name: 'Package 1',
         price: '50',
@@ -20,137 +20,137 @@ db.bookings.insertMany([
         age: 9,
     }]
 },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 3',
-//         price: '100',
-//     }],
-//     date: [{
-//         year: 2023,
-//         month: 'Feb',
-//         day: 25,
-//         time: '09:00',
-//     }],
-//     dog: [{
-//         name: 'Alex',
-//         gender: 'Female',
-//         breed: 'English Cockerspaniel',
-//         age: 6,
-//     }]
-// },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 3',
-//         price: '130',
-//     }],
-//     date: [{
-//         year: 2023,
-//         month: 'Aug',
-//         day: 15,
-//         time: '10:00',
-//     }],
-//     dog: [{
-//         name: 'Rex',
-//         gender: 'Male',
-//         breed: 'Portacolie',
-//         age: 9,
-//     }]
-// },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 1',
-//         price: '50',
-//     }],
-//     date: [{
-//         year: 2023,
-//         month: 'Mar',
-//         day: 1,
-//         time: '09:30',
-//     }],
-//     dog: [{
-//         name: 'Walter',
-//         gender: 'Female',
-//         breed: 'Dalmatian',
-//         age: 7,
-//     }]
-// },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 2',
-//         price: '100',
-//     }],
-//     date: [{
-//         year: 2023,
-//         month: 'Apr',
-//         day: 10,
-//         time: '10:00',
-//     }],
-//     dog: [{
-//         name: 'Henry',
-//         gender: 'Female',
-//         breed: 'Poodle',
-//         age: 5,
-//     }]
-// },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 1',
-//         price: '50',
-//     }],
-//     date: [{
-//         year: 2023,
-//         month: 'Dec',
-//         day: 5,
-//         time: '08:00',
-//     }],
-//     dog: [{
-//         name: 'Samson',
-//         gender: 'Male',
-//         breed: 'Irish Setter',
-//         age: '7',
-//     }]
-// },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 3',
-//         price: '130',
-//     }],
-//     date: [{
-//         year: 2022,
-//         month: 'May',
-//         day: 25,
-//         time: '07:00',
-//     }],
-//     dog: [{
-//         name: 'Baxter',
-//         gender: 'Female',
-//         breed: 'Portacolie',
-//         age: '8',
-//     }]
-// },
-// {
-//     // user: '',
-//     pkg: [{
-//         name: 'Package 4',
-//         price: '150',
-//     }],
-//     date: [{
-//         year: 2022,
-//         month: 'Jan',
-//         day: 17,
-//         time: '13:00',
-//     }],
-//     dog: [{
-//         name: 'Missy',
-//         gender: 'Male',
-//         breed: 'Springer Spaniel',
-//         age: 5,
-//     }]
-// }
+{
+    user: '63db4575ff57af61244f67cb',
+    pkg: [{
+        name: 'Package 3',
+        price: '100',
+    }],
+    date: [{
+        year: 2023,
+        month: 'Feb',
+        day: 25,
+        time: '09:00',
+    }],
+    dog: [{
+        name: 'Alex',
+        gender: 'Female',
+        breed: 'English Cockerspaniel',
+        age: 6,
+    }]
+},
+{
+    user: '63db4575ff57af61244f67cb',
+    pkg: [{
+        name: 'Package 3',
+        price: '130',
+    }],
+    date: [{
+        year: 2023,
+        month: 'Aug',
+        day: 15,
+        time: '10:00',
+    }],
+    dog: [{
+        name: 'Rex',
+        gender: 'Male',
+        breed: 'Portacolie',
+        age: 9,
+    }]
+},
+{
+    user: '63db4575ff57af61244f67cb',
+    pkg: [{
+        name: 'Package 1',
+        price: '50',
+    }],
+    date: [{
+        year: 2023,
+        month: 'Mar',
+        day: 1,
+        time: '09:30',
+    }],
+    dog: [{
+        name: 'Walter',
+        gender: 'Female',
+        breed: 'Dalmatian',
+        age: 7,
+    }]
+},
+{
+    user: '63db4575ff57af61244f67cc',
+    pkg: [{
+        name: 'Package 2',
+        price: '100',
+    }],
+    date: [{
+        year: 2023,
+        month: 'Apr',
+        day: 10,
+        time: '10:00',
+    }],
+    dog: [{
+        name: 'Henry',
+        gender: 'Female',
+        breed: 'Poodle',
+        age: 5,
+    }]
+},
+{
+    user: '63db4575ff57af61244f67cf',
+    pkg: [{
+        name: 'Package 1',
+        price: '50',
+    }],
+    date: [{
+        year: 2023,
+        month: 'Dec',
+        day: 5,
+        time: '08:00',
+    }],
+    dog: [{
+        name: 'Samson',
+        gender: 'Male',
+        breed: 'Irish Setter',
+        age: '7',
+    }]
+},
+{
+    user: '63db4575ff57af61244f67d1',
+    pkg: [{
+        name: 'Package 3',
+        price: '130',
+    }],
+    date: [{
+        year: 2022,
+        month: 'May',
+        day: 25,
+        time: '07:00',
+    }],
+    dog: [{
+        name: 'Baxter',
+        gender: 'Female',
+        breed: 'Portacolie',
+        age: '8',
+    }]
+},
+{
+    user: '63db4575ff57af61244f67d1',
+    pkg: [{
+        name: 'Package 4',
+        price: '150',
+    }],
+    date: [{
+        year: 2022,
+        month: 'Jan',
+        day: 17,
+        time: '13:00',
+    }],
+    dog: [{
+        name: 'Missy',
+        gender: 'Male',
+        breed: 'Springer Spaniel',
+        age: 5,
+    }]
+}
 ])
