@@ -1,6 +1,4 @@
 import express from 'express'
-import { UserModel, BookingModel } from './db.js'
-
 import userRoutes from './routes/User_routes.js'
 import bookingRoutes from './routes/Booking_routes.js'
 
@@ -18,9 +16,9 @@ app.get('/', (req, res) => {
 });
 
 // Get all users
-app.get('/users', async (req, res) => res.send(await UserModel.find()));
+app.use('/users', userRoutes);
 
 // Get all bookings
-app.get("/bookings", async (req, res) => res.send(await BookingModel.find()))
+app.use("/bookings", bookingRoutes)
 
 export default app

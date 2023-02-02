@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   console.log("Access to find all users");
-  // res.send(await UserModel.find().populate({ path: 'users', select: 'name' }))});
   res.send(await UserModel.find())});
 
 
@@ -52,9 +51,10 @@ router.post('/', async (req, res) => {
   // Update
 router.put('/:id', async (req, res) => {
     const { email, password, title, firstName, lastName, phoneNumber, isAdmin } = req.body
-    const updatedUser = { email, password, title, firstName, lastName, phoneNumber, isAdmin}
+    const updatedUser = { $set:{email}, $set:{password}, title, firstName, lastName, phoneNumber, $set:{isAdmin} }
     
     try {
+      console.log("Updating user requested")
       const user = await UserModel.findByIdAndUpdate(req.params.id, updatedUser, { returnDocument: 'after'})
       if (user) {
         res.send(user)
@@ -72,7 +72,7 @@ router.delete('/:id', async (req, res) => {
     try {
       const user = await UserModel.findByIdAndDelete(req.params.id)
       if (user) {
-        res.sendStatus(204) //need message to be sent ex) successfully deleted
+        res.sendStatus(204).send({ msg: "User deleted successfully"}) //need message to be sent ex) successfully deleted
       } else {
         res.status(404).send({ error: 'User not found' })
       }
