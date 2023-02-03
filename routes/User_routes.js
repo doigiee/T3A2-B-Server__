@@ -67,9 +67,8 @@ router.post('/login', async (req, res) => {
         issuer: 'PAWFUL_Dev'
       })
       return res.status(200).json({
-        code: 200,
-        message: `Welcome back to PAWFUL!, 
-      ${user.firstName}`,
+        code: 201,
+        message: 'Welcome back to PAWFUL!',
         user_id: user._id,
         firstName: user.firstName,
         token: token
@@ -115,7 +114,9 @@ router.put('/:id', verifyToken, async (req, res) => {
       console.log("Updating user requested")
       const user = await UserModel.findByIdAndUpdate(req.params.id, updatedUser, { returnDocument: 'after'})
       if (user) {
-        res.status(201).send(user)
+        res.status(201).json({
+          code: 201,
+          message: 'Successfully saved!'
         })
       } else {
         res.status(404).send({ error: 'Woof! User is not found!' })
