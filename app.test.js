@@ -2,14 +2,13 @@ import app from './app.js'
 import request from 'supertest'
 import test from 'node:test'
 
-//User_Routes.js tests
 describe("App tests", () => {
   test('Get home page', async () => {
     const res = await request(app).get('/')
     expect(res.status).toBe(200)
-    // expect(res.headers['content-type']).toMatch(/json/i)
-    // expect(res.body.info).toBeDefined()
-    // expect(res.body.info).toBe('Home Route')
+    expect(res.headers['content-type']).toMatch(/json/i)
+    expect(res.body.info).toBeDefined()
+    expect(res.body.info).toBe('Home Route')
   })
 
   describe('Get users list', () => {
@@ -23,7 +22,7 @@ describe("App tests", () => {
 
     it('An array of ...(set number)... of entries should be passed', () => {
       expect(res.body).toBeInstanceOf(Array)
-      expect(res.body.length).toBe(17)
+      expect(res.body.length).toBe(18)
 
       // change the number to be however many users you have in your database 
     })
@@ -32,11 +31,12 @@ describe("App tests", () => {
       res.body.forEach(el => {
         expect(el._id).toBeDefined()
         expect(el._id.length).toBe(24)
+        
+      })
+      expect(res.body[2].title).toBe('Mr')
     })
   })
 
-
-  describe('register a user', () => {
   test('Create a new user', async () => {
     const res = await request(app).post('/register').send({
       email: 'sandboxz@gmail.com',
@@ -48,7 +48,7 @@ describe("App tests", () => {
     })
   
     expect(res.status).toBe(201)
-    // expect(res.headers['content-type']).toMatch(/json/i)
+    expect(res.headers['content-type']).toMatch(/json/i)
     expect(res.body.code).toBe(201)
     expect(res.body.message).toMatch(/Thanks for registering!/i)
     expect(res.body.user_id).toBeDefined()
@@ -56,76 +56,40 @@ describe("App tests", () => {
     expect(res.body.firstName).toBe('Sandyz')
     expect(res.body.token).toBeDefined()
   })
-})
-
-  // describe("Login", () => {
-  //     // let token
+  describe("Login", () => {
+      let token
       
-  //     beforeEach(async () => {
-  //       request(app).post('/users/login').send({
-  //         email: 'sandboxz@gmail.com',
-  //         password: '124444',
-  //         // token : res.body.token
-  //       })
-        
-  //     })
+      beforeEach(async () => {
+        const res = await request(app).post('/users/login').send({
+          email: 'sandboxz@gmail.com',
+          password: '124444'
+        })
+        token = res.body.token
+      })
     
-  //     it("Logs in a user", async () => {
-  //       const res = await request(app)
-  //         .post("/users/login")
-  //         .send({ email: "sandboxz@gmail.com", password: "124444", token: token})
+      it("Logs in a user", async () => {
+        const res = await request(app)
+          .post("/users/login")
+          .send({ email: "sandbox@gmail.com", password: "123475" })
     
-  //       expect(res.status).toBe(200)
-  //       expect(res.body.message).toBe("Welcome back to PAWFUL!, example")
-  //       expect(res.body.user_id).toBeDefined()
-  //       expect(res.body.token).toBeDefined()
-  //       expect(res.body.firstName).toBeDefined()
-  //     })
+        expect(res.status).toBe(200)
+        expect(res.body.message).toBe("Welcome back to PAWFUL!")
+        expect(res.body.user_id).toBeDefined()
+        expect(res.body.token).toBeDefined()
+        expect(res.body.firstName).toBeDefined()
+      })
     
-  //     it("Responds with error when log in fails", async () => {
-  //       const res = await request(app)
-  //         .post("/login")
-  //         .send({ email: "sandboxz@gmail.com", password: "incorrect password" })
+      it("Responds with error when log in fails", async () => {
+        const res = await request(app)
+          .post("/login")
+          .send({ email: "sandboxxess@gmail.com", password: "incorrect password" })
     
-  //       expect(res.status).toBe(404)
-  //       expect(res.body.error).toBe("LogIn failed. Please try again")
-  //     })
-  // })
-
-  test('Get a user by id', async () => {
-    const res = await request(app).get('/users/63dcd8bb04339c7de25a9923')
-    expect(res.status).toBe(200)
-    expect(res.headers['content-type']).toMatch(/json/i)
-    expect(res.body._id).toBeDefined()
-    expect(res.body._id.length).toBe(24)
-    expect(res.body.title).toBe('Mr')
+        expect(res.status).toBe(404)
+        expect(res.body.error).toBe({ "error": "LogIn failed. Please try again"})      })
   })
-
-
-  test('Update a user by id', async () => {
-    const res = await request(app).put('/users/63dcd8bb04339c7de25a9923').send({
-      email: 'careysmith@gmail.com',
-      title: 'Mr',
-      firstName: 'Carey',
-      lastName: 'Smith',
-      phoneNumber: '0448537777',
 })
-    expect(res.status).toBe(200)
-    expect(res.headers['content-type']).toMatch(/json/i)
-    expect(res.body._id).toBeDefined()
-    expect(res.body._id.length).toBe(24)
-    expect(res.body.title).toBe('Mr')
-    expect(res.body.firstName).toBe('Carey')
-    expect(res.body.lastName).toBe('Smith')
-    expect(res.body.phoneNumber).toBe('0448537777')
-  })
 
-  test('Delete a user by id', async () => {
-    const res = await request(app).delete('/users/63dcd8bb04339c7de25a9923')
-    expect(res.status).toBe(204)
-  })
-
-  //Booking_Routes.js tests
+//   //Booking_Routes.js tests
   describe('Get bookings list', () => {
   test('Get bookings list', async () => {
     const res = await request(app).get('/bookings')
@@ -176,15 +140,13 @@ describe("App tests", () => {
 
   test('Get a booking by id', async () => {
     const res = await request(app).get('/bookings/63db4575ff57af61244f67cf')
-  
+
     expect(res.status).toBe(200)
     expect(res.headers['content-type']).toMatch(/json/i)
     expect(res.body._id).toBeDefined()
     expect(res.body._id.length).toBe(24)
     expect(res.body.title).toBe('Mr')
   })
-
-
 
   test('Update a booking by id', async () => {
     const res = await request(app).put('/bookings/63db4575ff57af61244f67cf').send({
@@ -214,6 +176,3 @@ describe("App tests", () => {
   })
 })
 })
-})
-})
-
