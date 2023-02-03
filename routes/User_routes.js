@@ -67,8 +67,9 @@ router.post('/login', async (req, res) => {
         issuer: 'PAWFUL_Dev'
       })
       return res.status(200).json({
-        code: 201,
-        message: 'Welcome back to PAWFUL!',
+        code: 200,
+        message: `Welcome back to PAWFUL!, 
+      ${user.firstName}`,
         user_id: user._id,
         firstName: user.firstName,
         token: token

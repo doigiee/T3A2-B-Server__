@@ -7,7 +7,7 @@ const router = express.Router()
 router.get("/", verifyToken, async (req, res) => res.send(await BookingModel.find()))
 
 // Searching booking through User_id
-router.get("/my_bookings", verifyToken, async (req, res) => {
+router.post("/my_bookings", verifyToken, async (req, res) => {
   console.log("Access to find users bookings by user_id : ", req.body._id );
   try {
     const bookings = await BookingModel.find({ user: req.body._id })

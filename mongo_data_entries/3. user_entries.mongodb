@@ -29,17 +29,6 @@ db.users.insertMany([
         phoneNumber: '0478946362',
         isAdmin: false
     },
-
-{
-        email: 'Katkake@gmail.com',
-        password: '123',
-        title: 'Mr',
-        firstName: 'John',
-        lastName: 'Poe',
-        phoneNumber: '0469321236',
-        isAdmin: false,
-},
-
 {
         email: 'FernStacks@outlook.com',
         password: '123',
