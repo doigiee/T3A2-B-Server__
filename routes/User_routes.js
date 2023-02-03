@@ -22,11 +22,11 @@ router.post('/register', async (req, res) => {
     // const userObject = await UserModel.findOne({ email: email })
     const newUser = {
       email,
-      password,
       title,
       firstName,
       lastName,
-      phoneNumber
+      phoneNumber,
+      password,
     }
     // 2. Insert the new user into the database
     const insertedUser = await UserModel.create(newUser)

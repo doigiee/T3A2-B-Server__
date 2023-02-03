@@ -28,10 +28,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    password: {
-        type: String,
-        required: true
-    },
     title: {
         type: String
     },
@@ -45,6 +41,10 @@ const userSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: String,
+    },
+    password: {
+        type: String,
+        required: true
     },
     isAdmin: {
         type: Boolean,
