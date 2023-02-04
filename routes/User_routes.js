@@ -102,28 +102,27 @@ router.get('/:id', verifyToken, async (req, res) => {
   
 // Update user's detail
 router.put('/:id', verifyToken, async (req, res) => {
-    const { email, password, title, firstName, lastName, phoneNumber, isAdmin } = req.body
-    const updatedUser = { 
-      $set:{email}, 
-      $set:{password}, 
-      title, 
-      firstName, 
-      lastName, 
-      phoneNumber, 
-      $set:{isAdmin} }
-    try {
-      console.log("Updating user requested")
-      const user = await UserModel.findByIdAndUpdate(req.params.id, updatedUser, { returnDocument: 'after'})
-      if (user) {
-        res.status(201).send(user)
-        })
-      } else {
-        res.status(404).send({ error: 'Woof! User is not found!' })
-      }
+  const { email, password, title, firstName, lastName, phoneNumber, isAdmin } = req.body
+  const updatedUser = { 
+    $set:{email}, 
+    $set:{password}, 
+    title, 
+    firstName, 
+    lastName, 
+    phoneNumber, 
+    $set:{isAdmin} }
+  try {
+    console.log("Updating user requested")
+    const user = await UserModel.findByIdAndUpdate(req.params.id, updatedUser, { returnDocument: 'after'})
+    if (user) {
+      res.status(201).send(user)
+    } else {
+      res.status(404).send({ error: 'Woof! User is not found!' })
     }
-    catch (err) {
-      res.status(500).send({ error: 'Failed to save the data! Please try again later.' })
-    }
+  }
+  catch (err) {
+    res.status(500).send({ error: 'Failed to save the data! Please try again later.' })
+  }
 })
 
   // Delete
