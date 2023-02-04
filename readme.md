@@ -27,12 +27,12 @@ Below are documentation and proof of user testing and the API endpoints as well 
 
 ## Front-End Testing and Deployment
 
-###Homepage
+###Homepage###
 --------------
 ![Alt text](docs/front_end_app.jpeg/Homepage.jpg)
 
 
-###Booking
+###Booking###
 --------------
 **The pictures below demonstrates how easy it is made to choose one of the selected time for their booking.**
 
@@ -46,7 +46,7 @@ Below are documentation and proof of user testing and the API endpoints as well 
 
 
 
-###Create Account
+###Create Account###
 --------------
 **As simple as an email, title, name, phone number and password to get started. And very easy in user settings to update and change personal information as well!!**
 
@@ -58,13 +58,13 @@ Below are documentation and proof of user testing and the API endpoints as well 
 ![update details](docs/front_end_app.jpeg/update%20details.jpg)
 
 
-###Login
+###Login###
 --------------
 ![login](docs/front_end_app.jpeg/login%20with%20message.jpg)
 
 ![logout](docs/front_end_app.jpeg/sucessfully%20logged%20out.jpg)
 
-###Inquiry
+###Inquiry###
 --------------
 ![make an inquiry](docs/front_end_app.jpeg/prep%20an%20inquiry.jpg)
 
@@ -73,14 +73,14 @@ Below are documentation and proof of user testing and the API endpoints as well 
 
 ## Back-End Testing
 
-###Login and Register
+###Login and Register###
 --------------
 
 ![user login](docs/backend_mongodb.jpeg/userlogin.jpg)
 
 ![register](docs/backend_mongodb.jpeg/register.jpg)
 
-###Get Requests
+###Get Requests###
 --------------
 ![get all users](docs/backend_mongodb.jpeg/all%20users.jpg)
 
@@ -92,26 +92,26 @@ Below are documentation and proof of user testing and the API endpoints as well 
 
 
 
-###Post Requests
+###Post Requests###
 --------------
 ![post a booking](docs/backend_mongodb.jpeg/post%20a%20booking.jpg)
 
 ![post my booking](docs/backend_mongodb.jpeg/post%20my%20booking.jpg)
 
 
-###Update Requests
+###Update Requests###
 --------------
 ![update user by id](docs/backend_mongodb.jpeg/update%20user%20by%20ID.jpg)
 
 ![booking by my id](docs/backend_mongodb.jpeg/update%20booking%20by%20ID.jpg)
 
-###Delete Requests
+###Delete Requests###
 --------------
 ![delete a user](docs/backend_mongodb.jpeg/delete%20user%20by%20ID.jpg)
 
 ![delete a booking](docs/backend_mongodb.jpeg/dellete%20a%20booking.jpg)
 
-###Error Handling
+###Error Handling###
 --------------
 ![error handling](docs/error_handling/error%20handling%201.jpg)
 
