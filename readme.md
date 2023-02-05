@@ -1,3 +1,9 @@
+[PAWFUL](https://pawful.netlify.app/)
+[Trello Board](https://trello.com/b/eWwKHnN0/doggy-playground-web-app)
+[Backend - Server API](https://github.com/doigiee/T3A2-B-Server__)
+[Frontend](https://github.com/RyanWoolf/T3A2-Client)
+[Youtube](https://www.youtube.com/watch?v=JTOWHwUrmpg)
+
 Firstly run `npm init -y`, and `npm i express` then run `npm start` or `nodemon` to get the Server running. 
 
 
@@ -17,85 +23,104 @@ make a DB with Mongo DB.
 or alternatively to step 3, run `node seed.js` once your database 'PAWFUL' is created and connected with the 2 needed collections(can use `mongo_data_entries/1. create_users_database.mongodb` then `mongo_data_entries/2.createbookings_database.mongodb`) this will create 2 collections 'users' and 'bookings'. then do and `node seed.js`, in terminal, to seed users collection. Then manually insert the user_id from the ids created in users into `node seed2.js` to creating bookings which relate to your newly created users, as `users[2]._id` didn't work unfortunately. If followed correctly this will create some default entries into our DB's 'users' and 'bookings' collections.
 
 
-below are documentation and proof of user testing and the API endpoints as well as showing that our deployed application is fully tested.
+Below are documentation and proof of user testing and the API endpoints as well as showing that our deployed application is fully tested. We obviously ran this code and did this kinda of manual testing 1000 times over but here are demonstrations of each kind of user testing which we did.
 
 ## Front-End Testing and Deployment
 
-###Booking
+###Homepage###
 --------------
+![Alt text](docs/front_end_app.jpeg/Homepage.jpg)
+
+
+###Booking###
+--------------
+**The pictures below demonstrates how easy it is made to choose one of the selected time for their booking.**
+
 ![Alt text](docs/front_end_app.jpeg/booking.jpg)
 
 ![Alt text](docs/front_end_app.jpeg/bookings.jpg)
 
 ![Alt text](docs/front_end_app.jpeg/one%20booking.jpg)
 
-![Alt text](docs/front_end_app.jpeg/sucessfully%20logged%20out.jpg)
 
 
 
-###Create Account
+
+###Create Account###
 --------------
-![Alt text](docs/front_end_app.jpeg/create%20an%20account%20success.jpg)
-
-![Alt text](docs/front_end_app.jpeg/create%20an%20account.jpg)
-
-![Alt text](docs/front_end_app.jpeg/update%20details.jpg)
+**As simple as an email, title, name, phone number and password to get started. And very easy in user settings to update and change personal information as well!!**
 
 
+![create account](docs/front_end_app.jpeg/create%20an%20account.jpg)
 
-###Homepage
+![create account success](docs/front_end_app.jpeg/create%20an%20account%20success.jpg)
+
+![update details](docs/front_end_app.jpeg/update%20details.jpg)
+
+
+###Login###
 --------------
-![Alt text](docs/front_end_app.jpeg/Homepage.jpg)
+![login](docs/front_end_app.jpeg/login%20with%20message.jpg)
 
+![logout](docs/front_end_app.jpeg/sucessfully%20logged%20out.jpg)
 
-###Login
+###Inquiry###
 --------------
-![Alt text](docs/front_end_app.jpeg/login%20with%20message.jpg)
+![make an inquiry](docs/front_end_app.jpeg/prep%20an%20inquiry.jpg)
 
-
-###Inquiry
---------------
-![Alt text](docs/front_end_app.jpeg/prep%20an%20inquiry.jpg)
-
-![Alt text](docs/front_end_app.jpeg/send%20a%20inquiry.jpg)
+![send inquiry](docs/front_end_app.jpeg/send%20a%20inquiry.jpg)
 
 
 ## Back-End Testing
 
-###Login and Register
+###Login and Register###
 --------------
 
-![Alt text](docs/backend_mongodb.jpeg/userlogin.jpg)
+![user login](docs/backend_mongodb.jpeg/userlogin.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/register.jpg)
+![register](docs/backend_mongodb.jpeg/register.jpg)
 
-###Get Requests
+###Get Requests###
 --------------
-![Alt text](docs/backend_mongodb.jpeg/all%20users.jpg)
+![get all users](docs/backend_mongodb.jpeg/all%20users.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/get%20all%20bookings.jpg)
+![get all bookings](docs/backend_mongodb.jpeg/get%20all%20bookings.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/get%20my%20booking%20by%20ID.jpg)
+![get individual bookings](docs/backend_mongodb.jpeg/get%20my%20booking%20by%20ID.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/get%20user%20by%20ID.jpg)
+![get user by id](docs/backend_mongodb.jpeg/get%20user%20by%20ID.jpg)
 
 
 
-###Post Requests
+###Post Requests###
 --------------
-![Alt text](docs/backend_mongodb.jpeg/post%20a%20booking.jpg)
+![post a booking](docs/backend_mongodb.jpeg/post%20a%20booking.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/post%20my%20booking.jpg)
+![post my booking](docs/backend_mongodb.jpeg/post%20my%20booking.jpg)
 
 
-###Update Requests
+###Update Requests###
 --------------
-![Alt text](docs/backend_mongodb.jpeg/update%20user%20by%20ID.jpg)
+![update user by id](docs/backend_mongodb.jpeg/update%20user%20by%20ID.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/update%20booking%20by%20ID.jpg)
+![booking by my id](docs/backend_mongodb.jpeg/update%20booking%20by%20ID.jpg)
 
-###Delete Requests
+###Delete Requests###
 --------------
-![Alt text](docs/backend_mongodb.jpeg/delete%20user%20by%20ID.jpg)
+![delete a user](docs/backend_mongodb.jpeg/delete%20user%20by%20ID.jpg)
 
-![Alt text](docs/backend_mongodb.jpeg/dellete%20a%20booking.jpg)
+![delete a booking](docs/backend_mongodb.jpeg/dellete%20a%20booking.jpg)
+
+###Error Handling###
+--------------
+![error handling](docs/error_handling/error%20handling%201.jpg)
+
+![error handling](docs/error_handling/error%20handling%202.jpg)
+
+![error handling](docs/error_handling/error%20handling%20when%20user%20already%20exists%203.jpg)
+
+![error handling](docs/error_handling/session%20expired%204.jpg)
+
+![error handling](docs/error_handling/inncorrect%20credentials%205.jpg)
+
+![error handling](docs/error_handling/inncorrect%20credentials%206.jpg)
