@@ -37,7 +37,7 @@ describe("App tests", () => {
   })
 
   test('Create a new user', async () => {
-    const res = await request(app).post('/users/').send({
+    const res = await request(app).post('/users/register').send({
       email: 'partyhouse353332@gmail.com',
       password: '123478',
       title: 'Mr',
