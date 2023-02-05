@@ -48,7 +48,7 @@ router.post('/register', async (req, res) => {
       token: token
     })
   } catch (err) {
-    res.status(500).send({ error: err.message })
+    res.status(500).send({ error: err.keyValue })
   }
 })
 

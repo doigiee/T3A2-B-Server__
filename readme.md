@@ -1,9 +1,54 @@
-[PAWFUL](https://pawful.netlify.app/)
-[Trello Board](https://trello.com/b/eWwKHnN0/doggy-playground-web-app)
-[Backend - Server API](https://github.com/doigiee/T3A2-B-Server__)
-[Frontend](https://github.com/RyanWoolf/T3A2-Client)
-[Youtube](https://www.youtube.com/watch?v=JTOWHwUrmpg)
 
+<div style="text-align:center">
+<br><br>
+<img src=./docs/dog_login.png > <br><br>
+<h1 style="font-weight:700"> PAWFUL </h1>
+</div>
+
+
+
+------
+### **Repositories**
+- [**Part A**](https://github.com/doigiee/T3A2)  
+- [**Part B - API Server**](https://github.com/doigiee/T3A2-B-Server__)  
+- [**Part B - Client**](https://github.com/ryanwoolf/T3A2-Client)  
+
+
+---------------------------------------------------------------------------------------------------------
+
+### **Collaborators**
+
+- [**Jordyn Small**](https://github.com/JanzenCode)
+- [**Joshua Doig**](https://github.com/doigiee)
+- [**Ryan Chang-Ha Lee**](https://github.com/RyanWoolf)
+
+---------------------------------------------------------------------------------------------------------
+### **Helpful links**
+
+- [PAWFUL](https://pawful.netlify.app/)  
+- [Trello Board](https://trello.com/invite/b/eWwKHnN0/ATTI3f78610d0c10e4d694ad3163526c3e6bAB3FD434/doggy-playground-web-app) 
+- [Presentation](https://www.youtube.com/watch?v=JTOWHwUrmpg) 
+
+
+----------------------------------------------------------------
+### **Index**
+- [Installation](#installation)
+- [Deployment](#deployment)
+- [Delegation](#delegation)
+- [Demonstration](#demonstration)
+- [Libraries](#libraries)
+- [Error handling](#error-handling)
+- [Testing](#testing)
+- [Source control](#source-control)
+- [Trello screenshots](#trello-screenshots)
+  
+----------------------------------------------------------------
+## **Installation**
+----------------------------------------------------------------
+### **1. Backend Server**  
+  
+Git clone here: [Backend - Server API](https://github.com/doigiee/T3A2-B-Server__)  
+<br>
 Firstly run `npm init -y`, and `npm i express` then run `npm start` or `nodemon` to get the Server running. 
 
 
@@ -25,14 +70,96 @@ or alternatively to step 3, run `node seed.js` once your database 'PAWFUL' is cr
 
 Below are documentation and proof of user testing and the API endpoints as well as showing that our deployed application is fully tested. We obviously ran this code and did this kinda of manual testing 1000 times over but here are demonstrations of each kind of user testing which we did.
 
-## Front-End Testing and Deployment
+### **2. Frontend**  
+  
+Git clone here: [Frontend](https://github.com/RyanWoolf/T3A2-Client) 
+<br>
 
-###Homepage###
+After clone or pull the repository, Try below
+```
+npm install
+```
+
+if you face an error on dev-packages, please try below
+
+```
+npm install --force
+```
+
+After successfully installing packages, 
+you can run the following command to start server
+
+```
+npm run dev
+```
+
+After you see the below message, it's ready to start
+```bash
+> t3a2-client@0.0.0 dev
+> vite
+
+
+  VITE v4.0.4  ready in 275 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
+<br><br><br>
+
+## **Delegation**
+----------------------------------------------------------------
+
+This is the very first of team projects for all of collaborators.
+We have assigned each task based on their interests and the grades from last couple of other assignments. 
+
+**Joshua** : Backend server and documentation  
+- Has strength on idea and concept about what and how to implement of this project database. 
+- Wasn't confident on visualization ideas.
+
+**Ryan Chang-Ha Lee** : Frontend, Graphic design and visualization  
+- Has strength on visualizing part such as Graphic design concept and development. He's strongly interested in Frontend design.
+- Has a bit of lack on API server. 
+
+**Jordyn Small** : General tasks
+
+
+Each tickets from Trello based on `Kanban` project methodology has been picked up by each collaborators voluntarily but the due dates have been determined through many times of discussions in the team.
+
+Please refer to 
+
+
+<br><br><br>
+
+## **Deployment**
+----------------------------------------------------------------
+### **Frontend**
+Address : https://pawful.netlify.app/  
+Hosting : Netlify  
+![Netlity](docs/deployment/netlify.png)  
+
+### **Backend**
+Address : http://t3a2-b-server-production-542a.up.railway.app/  
+Hosting : Railway    
+![Railway](docs/deployment/railway.png) 
+
+<br><br><br>
+
+## **Libraries**
+--------------------------------------
+### Click [here](./docs/libraries.md) to see Libraries explanation
+
+
+<br><br><br>
+
+
+## **Demonstration**
+### **Homepage**
 --------------
 ![Alt text](docs/front_end_app.jpeg/Homepage.jpg)
 
 
-###Booking###
+### **Booking**
 --------------
 **The pictures below demonstrates how easy it is made to choose one of the selected time for their booking.**
 
@@ -46,7 +173,7 @@ Below are documentation and proof of user testing and the API endpoints as well 
 
 
 
-###Create Account###
+### **Create Account**
 --------------
 **As simple as an email, title, name, phone number and password to get started. And very easy in user settings to update and change personal information as well!!**
 
@@ -58,69 +185,84 @@ Below are documentation and proof of user testing and the API endpoints as well 
 ![update details](docs/front_end_app.jpeg/update%20details.jpg)
 
 
-###Login###
+### **Login**
 --------------
 ![login](docs/front_end_app.jpeg/login%20with%20message.jpg)
 
 ![logout](docs/front_end_app.jpeg/sucessfully%20logged%20out.jpg)
 
-###Inquiry###
+### **Inquiry**
 --------------
 ![make an inquiry](docs/front_end_app.jpeg/prep%20an%20inquiry.jpg)
 
 ![send inquiry](docs/front_end_app.jpeg/send%20a%20inquiry.jpg)
 
+<br><br><br>
 
-## Back-End Testing
 
-###Login and Register###
+## **Error handling**
 --------------
 
-![user login](docs/backend_mongodb.jpeg/userlogin.jpg)
+### Client
 
-![register](docs/backend_mongodb.jpeg/register.jpg)
+1. Custom 404 page
 
-###Get Requests###
---------------
-![get all users](docs/backend_mongodb.jpeg/all%20users.jpg)
-
-![get all bookings](docs/backend_mongodb.jpeg/get%20all%20bookings.jpg)
-
-![get individual bookings](docs/backend_mongodb.jpeg/get%20my%20booking%20by%20ID.jpg)
-
-![get user by id](docs/backend_mongodb.jpeg/get%20user%20by%20ID.jpg)
-
-
-
-###Post Requests###
---------------
-![post a booking](docs/backend_mongodb.jpeg/post%20a%20booking.jpg)
-
-![post my booking](docs/backend_mongodb.jpeg/post%20my%20booking.jpg)
-
-
-###Update Requests###
---------------
-![update user by id](docs/backend_mongodb.jpeg/update%20user%20by%20ID.jpg)
-
-![booking by my id](docs/backend_mongodb.jpeg/update%20booking%20by%20ID.jpg)
-
-###Delete Requests###
---------------
-![delete a user](docs/backend_mongodb.jpeg/delete%20user%20by%20ID.jpg)
-
-![delete a booking](docs/backend_mongodb.jpeg/dellete%20a%20booking.jpg)
-
-###Error Handling###
---------------
-![error handling](docs/error_handling/error%20handling%201.jpg)
-
+- Any routes doesn't match in the web-app. 
+- **Netlify** have their own error handling page. Needed small setup to intercept the customized error handling page  
+![error handling](docs/error_handling/error%20handling%201.png)
+  
+2. Login errors
+   
+- 1. If the information the user entered is not matched or API server is down
 ![error handling](docs/error_handling/error%20handling%202.jpg)
 
-![error handling](docs/error_handling/error%20handling%20when%20user%20already%20exists%203.jpg)
+- 2. When the user tries to login without an email or password
+![error handling](docs/error_handling/error_handling_no_input.png)
+
+3. Register
+
+- 1. Email is already used
+![error](docs/error_handling/error_email_used.png)
+
+- 2. Tries to proceed without the minimum required inputs
+![error handling](docs/error_handling/error_handling_no_input_register.png)
+
+
+### API server  
 
 ![error handling](docs/error_handling/session%20expired%204.jpg)
 
 ![error handling](docs/error_handling/inncorrect%20credentials%205.jpg)
 
 ![error handling](docs/error_handling/inncorrect%20credentials%206.jpg)
+
+<br><br><br>
+
+## **Testing**
+--------------------------------------
+### Click [here](./docs/testing.md) to see Testing report
+
+
+<br><br><br>
+
+## **Source control**
+--------------------------------------
+
+1. Backend commits. See [here](https://github.com/doigiee/T3A2-B-Server__/commits/main) to see the full commits  
+![backend](docs/source_controll/backend.png)
+
+2. Frontend commits. See [here](https://github.com/RyanWoolf/T3A2-Client/commits/main) to see the full commits  
+![frontend](docs/source_controll/frontend.png)
+
+
+<br><br><br>
+
+## **Trello Screenshots**
+--------------------------------------
+
+### **Our team is following `Kanban` project methodology to perform high task efficiency according to their ability and circumstances.**
+
+### Click [here](#./docs/trello.md) to see Trello Screenshots
+
+
+<br><br><br>
